@@ -1,20 +1,12 @@
-public class WeightCalculatorTest {
 
-    WebDriver driver;
+    public class WeightCalculatorTest {
 
-
-    @Before
-    public void beforeClass() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
+        public static void main (String[]args) throws InterruptedException {
+            InvalidValueTest invalidValueTest = new InvalidValueTest();
+            invalidValueTest.setUp();
+            invalidValueTest.testWithInvalidMaxdValue();
+            invalidValueTest.testWithInvalidMindValue();
+            invalidValueTest.testWithNoValue();
+            invalidValueTest.close();
+        }
     }
-
-
-
-    @After
-    public void afterClass() {
-        driver.quit();
-    }
-
-}
