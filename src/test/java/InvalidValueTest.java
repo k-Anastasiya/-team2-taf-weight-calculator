@@ -16,7 +16,7 @@ public class InvalidValueTest extends WebDriverSettings {
         Thread.sleep(1000);
         WebElement searchBtn2 = driver.findElement(By.xpath(TestSelectors.CALCULATEBUTTONXPATH));
         searchBtn2.click();
-        String actualMessage = driver.findElement(By.xpath(TestSelectors.ERRORMESSAGECSS)).getText();
+        String actualMessage = driver.findElement(By.xpath(TestSelectors.ERRORMESSAGEXPATH)).getText();
         Assert.assertEquals("Не указано имя.\nРост должен быть в диапазоне 50-300 см." +
                 "\nВес должен быть в диапазоне 3-500 кг.\nНе указан пол.", actualMessage);
 
@@ -30,7 +30,7 @@ public class InvalidValueTest extends WebDriverSettings {
         driver.findElement(By.xpath(TestSelectors.WEIGHTXPATH)).sendKeys("500.01");
         Thread.sleep(1000);
         driver.findElement(By.xpath(TestSelectors.CALCULATEBUTTONXPATH)).click();
-        String actualMessage = driver.findElement(By.xpath(TestSelectors.ERRORMESSAGECSS)).getText();
+        String actualMessage = driver.findElement(By.xpath(TestSelectors.ERRORMESSAGEXPATH)).getText();
         Assert.assertEquals("Не указано имя.\nРост должен быть в диапазоне 50-300 см." +
                 "\nВес должен быть в диапазоне 3-500 кг.\nНе указан пол.", actualMessage);
     }
@@ -40,7 +40,7 @@ public class InvalidValueTest extends WebDriverSettings {
         driver.get(TestSelectors.WEBSITEURL);
         Thread.sleep(1000);
         driver.findElement(By.xpath(TestSelectors.CALCULATEBUTTONXPATH)).click();
-        String actualMessage = driver.findElement(By.xpath(TestSelectors.ERRORMESSAGECSS)).getText();
+        String actualMessage = driver.findElement(By.xpath(TestSelectors.ERRORMESSAGEXPATH)).getText();
         Assert.assertEquals("Не указано имя.\nРост должен быть в диапазоне 50-300 см." +
                 "\nВес должен быть в диапазоне 3-500 кг.\nНе указан пол.", actualMessage);
     }

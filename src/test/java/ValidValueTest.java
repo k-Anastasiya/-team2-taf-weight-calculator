@@ -14,9 +14,9 @@ public class ValidValueTest extends WebDriverSettings {
         driver.findElement(By.xpath(TestSelectors.MALERADIOBUTTONXPATH)).click();
         driver.findElement(By.xpath(TestSelectors.CALCULATEBUTTONXPATH)).click();
         // Then
-        String result = driver.findElement(By.cssSelector(TestSelectors.ERRORMESSAGECSS)).getText();
+        String result = driver.findElement(By.xpath(TestSelectors.SUCCESSMESSAGEXPATH)).getText();
         System.out.println(result);
-        Assert.assertEquals("Слишком малая масса тела.", result);
+        Assert.assertEquals("Слишком малая масса тела", result);
     }
     @Test
     public void testValidMaxValue() {
@@ -29,9 +29,9 @@ public class ValidValueTest extends WebDriverSettings {
         driver.findElement(By.xpath(TestSelectors.MALERADIOBUTTONXPATH)).click();
         driver.findElement(By.xpath(TestSelectors.CALCULATEBUTTONXPATH)).click();
         // Then
-        String result = driver.findElement(By.cssSelector(TestSelectors.ERRORMESSAGECSS)).getText();
+        String result = driver.findElement(By.xpath(TestSelectors.SUCCESSMESSAGEXPATH)).getText();
         System.out.println(result);
-        Assert.assertEquals("Значительный избыток массы тела, тучность.", result);
+        Assert.assertEquals("Значительный избыток массы тела, тучность", result);
     }
 
 }

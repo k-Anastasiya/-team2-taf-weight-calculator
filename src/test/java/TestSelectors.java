@@ -6,6 +6,7 @@
         public static final String MALERADIOBUTTONXPATH = "//input[@value='m']";
         public static final String FEMALERADIOBUTTONXPATH = "//input[@value='f']";
         public static final String CALCULATEBUTTONXPATH = "//input[@value= 'Рассчитать']";
-        public static final String ERRORMESSAGECSS = "//b";
+        public static final String ERRORMESSAGEXPATH = "//b";
+        public static final String SUCCESSMESSAGEXPATH = "//td[2]";
     }
 
