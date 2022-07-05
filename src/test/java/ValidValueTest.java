@@ -1,10 +1,15 @@
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.*;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class ValidValueTest extends WebDriverSettings {
+
     @Test
-    public void testValidMinValue() {
+    public void testValidMinValue() throws InterruptedException {
+
         // Given
         driver.get(TestSelectors.WEBSITEURL);
         // When
@@ -13,13 +18,14 @@ public class ValidValueTest extends WebDriverSettings {
         driver.findElement(By.xpath(TestSelectors.WEIGHTXPATH)).sendKeys("3");
         driver.findElement(By.xpath(TestSelectors.MALERADIOBUTTONXPATH)).click();
         driver.findElement(By.xpath(TestSelectors.CALCULATEBUTTONXPATH)).click();
+        Thread.sleep(1000);
         // Then
-        String result = driver.findElement(By.Xpath(TestSelectors.ERRORMESSAGECSS)).getText();
+        String result = driver.findElement(By.xpath("/html/body/table/tbody/tr[2]/td[2]")).getText();
         System.out.println(result);
-        Assert.assertEquals("Слишком малая масса тела.", result);
+        Assert.assertEquals("Слишком малая масса тела", result);
     }
     @Test
-    public void testValidMaxValue() {
+    public void testValidMaxValue() throws InterruptedException {
         // Given
         driver.get(TestSelectors.WEBSITEURL);
         // When
@@ -28,10 +34,11 @@ public class ValidValueTest extends WebDriverSettings {
         driver.findElement(By.xpath(TestSelectors.WEIGHTXPATH)).sendKeys("500");
         driver.findElement(By.xpath(TestSelectors.MALERADIOBUTTONXPATH)).click();
         driver.findElement(By.xpath(TestSelectors.CALCULATEBUTTONXPATH)).click();
+        Thread.sleep(1000);
         // Then
-        String result = driver.findElement(By.Xpath(TestSelectors.ERRORMESSAGECSS)).getText();
+        String result = driver.findElement(By.xpath("/html/body/table/tbody/tr[2]/td[2]")).getText();
         System.out.println(result);
-        Assert.assertEquals("Значительный избыток массы тела, тучность.", result);
+        Assert.assertEquals("Значительный избыток массы тела, тучность", result);
     }
 
 }
