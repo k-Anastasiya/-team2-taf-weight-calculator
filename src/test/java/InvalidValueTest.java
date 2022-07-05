@@ -38,9 +38,6 @@ public class InvalidValueTest extends WebDriverSettings {
     @Test
     public void testWithNoValue() throws InterruptedException {
         driver.get(TestSelectors.WEBSITEURL);
-        driver.findElement(By.xpath(TestSelectors.NAMEXPATH)).sendKeys("");
-        driver.findElement(By.xpath(TestSelectors.HEIGHTXPATH)).sendKeys("");
-        driver.findElement(By.xpath(TestSelectors.WEIGHTXPATH)).sendKeys("");
         Thread.sleep(1000);
         driver.findElement(By.xpath(TestSelectors.CALCULATEBUTTONXPATH)).click();
         String actualMessage = driver.findElement(By.xpath(TestSelectors.ERRORMESSAGECSS)).getText();
