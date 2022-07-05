@@ -14,7 +14,7 @@ public class AlphaNumericFieldErrorTest extends WebDriverSettings {
         driver.findElement(By.xpath(TestSelectors.MALERADIOBUTTONXPATH)).click();
         driver.findElement(By.xpath(TestSelectors.CALCULATEBUTTONXPATH)).click();
         // Then
-        String result = driver.findElement(By.cssSelector(TestSelectors.ERRORMESSAGECSS)).getText();
+        String result = driver.findElement(By.xpath(TestSelectors.ERRORMESSAGEXPATH)).getText();
         System.out.println(result);
         Assert.assertEquals("Рост должен быть в диапазоне 50-300 см.", result);
     }
@@ -29,7 +29,7 @@ public class AlphaNumericFieldErrorTest extends WebDriverSettings {
         driver.findElement(By.xpath(TestSelectors.MALERADIOBUTTONXPATH)).click();
         driver.findElement(By.xpath(TestSelectors.CALCULATEBUTTONXPATH)).click();
         // Then
-        String result = driver.findElement(By.cssSelector(TestSelectors.ERRORMESSAGECSS)).getText();
+        String result = driver.findElement(By.xpath(TestSelectors.ERRORMESSAGEXPATH)).getText();
         System.out.println(result);
         Assert.assertEquals("Вес должен быть в диапазоне 3-500 кг.", result);
     }
